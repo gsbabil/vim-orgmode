@@ -160,21 +160,36 @@ class ShowHide(object):
 		"""
 		# register plug
 
-		self.keybindings.append(Keybinding(u'<Tab>',
-									 Plug(u'OrgToggleFoldingNormal', u'%s ORGMODE.plugins[u"ShowHide"].toggle_folding()<CR>' % VIM_PY_CALL)))
+                # self.keybindings.append(Keybinding(u'<Tab>',
+                self.keybindings.append(Keybinding(u'<Space>',
+                                                   Plug(u'OrgToggleFoldingNormal',
+                                                        u'%s \
+                                                        ORGMODE.plugins[u"ShowHide"].toggle_folding()<CR>'
+                                                        % VIM_PY_CALL)))
 		self.menu + ActionEntry(u'&Cycle Visibility', self.keybindings[-1])
 
-		self.keybindings.append(Keybinding(u'<S-Tab>',
-									 Plug(u'OrgToggleFoldingReverse', u'%s ORGMODE.plugins[u"ShowHide"].toggle_folding(reverse=True)<CR>' % VIM_PY_CALL)))
+                # self.keybindings.append(Keybinding(u'<S-Tab>',
+                self.keybindings.append(Keybinding(u'<S-Space>',
+                                                   Plug(u'OrgToggleFoldingReverse',
+                                                        u'%s \
+                                                        ORGMODE.plugins[u"ShowHide"].toggle_folding(reverse=True)<CR>'
+                                                        % VIM_PY_CALL)))
 		self.menu + ActionEntry(u'Cycle Visibility &Reverse', self.keybindings[-1])
 
-		self.keybindings.append(Keybinding(u'<localleader>.',
-									 Plug(u'OrgGlobalToggleFoldingNormal', u'%s ORGMODE.plugins[u"ShowHide"].global_toggle_folding()<CR>' % VIM_PY_CALL)))
+                # self.keybindings.append(Keybinding(u'<localleader>.',
+                self.keybindings.append(Keybinding(u'<localleader><Space>',
+                                                   Plug(u'OrgGlobalToggleFoldingNormal',
+                                                        u'%s \
+                                                        ORGMODE.plugins[u"ShowHide"].global_toggle_folding()<CR>'
+                                                        % VIM_PY_CALL)))
 		self.menu + ActionEntry(u'Cycle Visibility &Globally', self.keybindings[-1])
 
-		self.keybindings.append(Keybinding(u'<localleader>,',
-									 Plug(u'OrgGlobalToggleFoldingReverse',
-			   u'%s ORGMODE.plugins[u"ShowHide"].global_toggle_folding(reverse=True)<CR>' % VIM_PY_CALL)))
+                # self.keybindings.append(Keybinding(u'<localleader>,',
+                self.keybindings.append(Keybinding(u'<localleader><S-Space>',
+                                                   Plug(u'OrgGlobalToggleFoldingReverse',
+                                                        u'%s \
+                                                        ORGMODE.plugins[u"ShowHide"].global_toggle_folding(reverse=True)<CR>'
+                                                        % VIM_PY_CALL)))
 		self.menu + ActionEntry(u'Cycle Visibility Reverse G&lobally', self.keybindings[-1])
 
 		for i in range(0, 10):
