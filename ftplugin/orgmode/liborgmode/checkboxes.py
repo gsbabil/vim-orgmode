@@ -255,7 +255,7 @@ class Checkbox(DomObj):
 		while c:
 			yield c
 			c = c.next_sibling
-		raise StopIteration()
+		return
 
 	def all_children(self):
 		if not self.children:
