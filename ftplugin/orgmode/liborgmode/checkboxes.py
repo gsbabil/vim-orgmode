@@ -249,7 +249,7 @@ class Checkbox(DomObj):
 		else:
 			p = self.parent
 			if not p.children:
-				raise StopIteration()
+				return
 
 		c = p.first_checkbox
 		while c:
@@ -259,7 +259,7 @@ class Checkbox(DomObj):
 
 	def all_children(self):
 		if not self.children:
-			raise StopIteration()
+			return
 
 		c = self.first_checkbox
 		while c:
@@ -268,7 +268,7 @@ class Checkbox(DomObj):
 				yield d
 			c = c.next_sibling
 
-		raise StopIteration()
+		return
 
 	def all_children_status(self):
 		u""" Return checkboxes status for currnet checkbox's all children
